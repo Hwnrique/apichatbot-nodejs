@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121214">
+  <title>Clara — Assistente IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <main class="chat" aria-label="Chat com Clara">
+    <header class="chat-header">
+      <div class="brand-mark" aria-hidden="true">✳</div>
+      <div class="brand-copy"><h1>Clara</h1><p><span class="status-dot"></span> Assistente IA <span class="header-divider">·</span> online</p></div>
+      <button class="clear-button" id="clear-chat" type="button" aria-label="Limpar conversa" title="Limpar conversa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M5 7l1 13h12l1-13M9 7V4h6v3"/></svg><span>Limpar</span>
+      </button>
+    </header>
+
+    <section class="conversation" id="conversation" aria-label="Conversa" aria-live="polite">
+      <div class="welcome" id="welcome">
+        <div class="welcome-icon" aria-hidden="true">✳</div>
+        <p class="eyebrow">SEU ASSISTENTE PESSOAL</p>
+        <h2>Olá, como posso<br>ajudar você?</h2>
+        <p class="welcome-copy">Posso responder perguntas sobre a imagem da Estátua da Liberdade. O que você gostaria de saber?</p>
+        <div class="suggestions" aria-label="Sugestões">
+          <button type="button" class="suggestion" data-prompt="Descreva a imagem em detalhes.">Descreva a imagem em detalhes <span>↗</span></button>
+          <button type="button" class="suggestion" data-prompt="Quais detalhes interessantes aparecem nesta imagem?">Quais detalhes aparecem na imagem? <span>↗</span></button>
+        </div>
+      </div>
+      <div class="messages" id="messages"></div>
+      <div class="loading" id="loading" hidden><span class="typing-dots"><i></i><i></i><i></i></span><span>Clara está pensando…</span></div>
+    </section>
+
+    <footer class="composer-area">
+      <div class="error-message" id="error-message" role="alert" hidden></div>
+      <form class="composer" id="chat-form">
+        <label class="sr-only" for="message-input">Digite sua mensagem</label>
+        <textarea id="message-input" aria-label="Digite sua mensagem" placeholder="Escreva sua mensagem…" rows="1" required></textarea>
+        <button class="send-button" id="send-button" type="submit" aria-label="Enviar mensagem" title="Enviar mensagem">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3-7-8-1Zm8 1 8-9"/></svg>
+        </button>
+      </form>
+      <p class="composer-hint">Enter para enviar <span>·</span> Shift + Enter para nova linha</p>
+    </footer>
+  </main>
+</body>
+</html>
